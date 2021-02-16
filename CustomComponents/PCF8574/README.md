@@ -1,10 +1,10 @@
-##PCF8574 unix addon
+# PCF8574 unix addon
 
 Simple addon to Home Assistant which is platform independent (should work on any hardware with I2C bus and unix operating system).
 
 Because there is no connection to INT pin, the expander is asking in some period of time (in this configuration 500ms) about some changes on its pin when they are configured as inputs. These means than shorter changes cannot be reported to Home Assistant.
 
-###Prerequisities
+## Prerequisities
 - Use kernel modules to access I2C bus from devices:
 `modprobe i2c-dev`
 After that I2C bus should be visible in /dev/i2c-x, you can check it through command: `ls /dev/i2c*`
@@ -16,17 +16,17 @@ check all buses till you find your chip. For example run this command:
 to scan bus number 5
 - when you find the chip with address from range 0x20 - 0x27 for PCF8574 and 0x38 - 0x3F for PCF8574A please write it down for later configuration.
 
-###Home Assistant prerequisites
+## Home Assistant prerequisites
 It is necessary to install some additional Python modules to get access to I2C bus on your board. If you using docker Home Assistant installation then is necessary to install that module directly to docker modules:
-` pip3 install smbus --target /usr/share/hassio/homeassistant/deps/`
+`pip3 install smbus --target /usr/share/hassio/homeassistant/deps/`
 This will install smbus module to Home Assistant location. Of course first you need to check if the path of Home Assistant deps folder is correct.
 
-###PCF8574 module installation
+## PCF8574 module installation
 To do this you need to copy all four files (or just clone the repository) to Home Assistant custom-components location, for example
 `cd /usr/share/hassio/custom_components`
 `git clone https://github.com/menuet88/HomeAssistant.git`
 
-###Configuring Home Assistant
+## Configuring Home Assistant
 In the main configuration file you can add module pcf8574, for example:
 ```yaml
 pcf8574:
@@ -39,7 +39,8 @@ pcf8574:
         1: input2
       outputs:
         2: output1
-        3: output2```
+        3: output2
+```
 The main module configuration need three parameters:
 - bus - number of your I2C bus where expander is connected
 - invert - true or false, define if the expander logic is inverted or not
