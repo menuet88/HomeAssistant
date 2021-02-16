@@ -52,3 +52,5 @@ The main module configuration need three parameters:
 Every pin can be configured as an input and output. Please remember that pins are open drain configuration, so the IC can only drive some device with low level.
 
 That`s all, the new devices should be visible in Home Assistant.
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/xX8wVSlxL1g/0.jpg)](http://www.youtube.com/watch?v=xX8wVSlxL1g "Example")
