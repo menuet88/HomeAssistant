@@ -1,0 +1,8 @@
+{
+  "domain": "pcf8574",
+  "name": "pcf8574 I/O Expander",
+  "documentation": "https://github.com/menuet88/hassCustomComponents",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["menuet@op.pl"]
+}
